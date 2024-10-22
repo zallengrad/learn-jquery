@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Jquery</title>
+  </head>
+  <body>
+    <h1>kemana kamu ingin pergi</h1>
+    <ul class="lokasi">
+      <li class="bandung">
+        bandung
+        <button id="keBandung">Pergi!</button>
+        <button id="hideBandung">H</button>
+        <button id="foBandung">FO</button>
+        <button id="suBandung">SU</button>
+        <button id="hapusBandung">X</button>
+      </li>
+      <li class="surabaya">surabaya</li>
+      <li class="yogyakarta">yogyakarta</li>
+      <br />
+      <button id="toggle">Toggle</button>
+      <button id="animate">Toggle Animate</button>
+    </ul>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // cek jquery sudah jalan belum
+        console.log("jquery sudah jalan");
+
+        $("#keBandung").on("click", function () {
+          alert("saya suka ke bandung!");
+        });
+        $("#hapusBandung").on("click", function () {
+          $(".bandung").remove();
+          alert("bandung dihapus dari wisata !");
+        });
+        $("#hideBandung").on("click", function () {
+          $(".bandung").hide();
+        });
+        $("#foBandung").on("click", function () {
+          $(".bandung").fadeOut(2000);
+        });
+        $("#suBandung").on("click", function () {
+          $(".bandung").slideUp(2000);
+        });
+
+        $("#toggle").on("click", function () {
+          $(".bandung").fadeToggle();
+        });
+
+        $("#animate").on("click", function () {
+          $(".bandung").animate({
+            // aturan css dalam jquery menggunakan camelCase
+            marginLeft: 30,
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
